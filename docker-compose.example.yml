@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  google-gemini-openai-proxy:
+    image: soulteary/google-gemini-openai-proxy:v1.0.0
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      # 推荐使用“无痛”的变量来配置你的程序
+      - TZ=Asia/Shanghai
+      # 使用 GEMINI 社区提供的 API URL
+      - GEMINI_ENDPOINT=https://GEMINI Endpoint>/
+      # 使用 GEMINI 提供的 API Key
+      - GEMINI_API_KEY=<GEMINI API Key>
+      # 使用 GEMINI 提供的 Model Name。可选，默认为 "GEMINI-PRO"
+      - GEMINI_MODEL_NAME=<GEMINI Model Name>
